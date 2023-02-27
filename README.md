@@ -22,8 +22,15 @@ when running tests etc. Follow this handy [guide](https://www.jetbrains.com/help
 
 ### 2. Activate `virtualenv`
 
+If you're using a linux terminal, run:
 ```shell
 . venv/bin/activate
+```
+
+If you're using windows terminal, run:
+
+```shell
+. venv/scripts/activate
 ```
 
 _Manual Alternative_

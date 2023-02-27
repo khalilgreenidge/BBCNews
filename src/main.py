@@ -1,9 +1,10 @@
-from routers import items
+from routers import items, users
 from fastapi import FastAPI
 import uvicorn
 
 app = FastAPI()
 app.include_router(items.router)
+app.include_router(users.router)
 
 
 @app.get("/")

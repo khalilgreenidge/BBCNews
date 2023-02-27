@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import APIRouter
-from Models.Item import Item
+from schemas.Item import Item
 
 
 router = APIRouter(prefix="/items", tags=["items"], responses={404: {"body": "item not found"}})

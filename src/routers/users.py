@@ -1,6 +1,5 @@
 """Router (resource) for users."""
 from fastapi import APIRouter
-from connectors.sql import engine, Base
 from controllers.UserController import UserController
 from schemas.User import UserCredentials, User
 

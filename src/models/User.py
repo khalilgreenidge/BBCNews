@@ -1,5 +1,10 @@
-from connectors.sql import Base
 from sqlalchemy import Column, Integer, String, Date
+
+from sqlalchemy.orm import DeclarativeBase
+
+
+class Base(DeclarativeBase):
+    pass
 
 
 class User(Base):

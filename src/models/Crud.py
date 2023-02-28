@@ -1,16 +1,20 @@
 from fastapi import Depends
+from sqlalchemy import select
+from sqlalchemy.orm import Session
 
-from connectors.sql import SessionLocal
+from connectors.sql import session
 from models.User import User
 
 
 def get_db():
-    db = SessionLocal()
+    db = session
     try:
         yield db
     finally:
         db.close()
 
 
-def get_user(email: str, db: SessionLocal = Depends(get_db)):
-    return db.query(User).filter(User.email == email).first()
+def get_user(email_arg: str):
+    db = session
+    user = db.execute(select(User).filter_by(email=email_arg)).scalar_one()
+    return user
